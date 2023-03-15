@@ -1,5 +1,11 @@
 #!/bin/bash
 
+CHECK_EMMC=`ls /dev/mmcblk1`
+if [[ $CHECK_EMMC == "" ]];then
+        echo -e "\e[1;33mNo EMMC\e[0m"
+        exit
+fi
+
 DEVICE=/dev/mmcblk0
 DEVICE_NAME=${DEVICE##/dev/}p1
 DEVICE_SECTOR="$DEVICE"p1
