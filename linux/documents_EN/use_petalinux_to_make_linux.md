@@ -17,7 +17,7 @@ If your petalinux tool is installed in the */opt/pkg/petalinux* path like me, us
 ![](../.images_for_documents/2.png)
 3. Use the hardware description file in the*Hardware*path to configure the hardware information of the petalinux project. You can use*Auto_config_petalinux_hardware.sh* to complete the settings, as shown below :\
 ![](../.images_for_documents/4.png)\
-After completing the operation according to the prompt, select your development board model, here I use AXU2CG-E as an example :\
+After completing the operation according to the prompt, select your development board model, here I use AXU2CGB as an example :\
 ![](../.images_for_documents/5.png)
 4. If you do not need or want to use offline compilation, you can skip this step. Use *set_offline_sstate_and_Downloads.sh* script to set offline compilation :\
 ![](../.images_for_documents/6.png)\

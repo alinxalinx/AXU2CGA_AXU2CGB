@@ -17,7 +17,7 @@
 ![](../.images_for_documents/2.png)
 3. 使用*hardware* 路径中的硬件描述文件来配置petalinux工程的硬件信息，可以使用*auto_config_petalinux_hardware.sh* 脚本来完成设置，如下图：\
 ![](../.images_for_documents/4.png)\
-根据提示完成操作，选择你的开发板型号，我以AXU2CG-E为例：\
+根据提示完成操作，选择你的开发板型号，我以AXU2CG为例：\
 ![](../.images_for_documents/5.png)
 4. 如果你不需要或者不想使用离线编译，则可以跳过这一步。使用*set_offline_sstate_and_downloads.sh* 脚本设置离线编译：\
 ![](../.images_for_documents/6.png)\
