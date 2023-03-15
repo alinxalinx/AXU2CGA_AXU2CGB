@@ -7,7 +7,7 @@
 		│
 		├── hardware
 		│	│
-		│	├── AXU2CG 
+		│	├── AXU2CGA 
 		│	│	│
 		│	│	└─ design_1_wrapper.xsa	
 		│	│
