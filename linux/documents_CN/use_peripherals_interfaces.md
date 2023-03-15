@@ -86,7 +86,7 @@ cat /sys/class/gpio/gpio508/value
 ```
 
 #### 2.3使用系统内置的脚本测试LEDs和KEYs
-运行 *~/shells_for_testing_peripheral_devices/* 中的 *leds_keys_test.sh* 脚本(*ps：按**ctrl+c**组合键退出该脚本。*)。然后可以用PS_KEY控制PS_LED点亮和熄灭，PL_KEY控制PS_LED点亮和熄灭：\
+运行 *~/shells_for_testing_peripheral_devices/* 中的 *leds_keys_test.sh* 脚本(*ps：按**ctrl+c**组合键退出该脚本。*)。然后可以用KEY控制LED点亮和熄灭：\
 ![](../.images_for_documents/49.png)
 
 ---
@@ -114,7 +114,7 @@ MIPI主要致力于定义一系列用于移动设备的硬件和软件接口标�
 除了移动设备，MIPI的应用还逐渐扩展到了其他领域，如汽车、物联网、医疗设备等，成为了通信和控制的重要接口之一。\
 我们开发版当前系统的系统中两个MIPI接口都被设计成了输入，可以连接MIPI摄像头使用。
 #### 4.2在Linux中使用MIPI
-首先我们连接显示器到DP口并接入一个MIPI接口的OV5640摄像头到MIPI接口(请不要带电操作)：\
+首先我们连接显示器到DP口并接入MIPI接口的OV5640摄像头到MIPI接口(请不要带电操作)：\
 ![](../.images_for_documents/67.png)\
 以MIPI1接口为例，在系统启动并登录后使用命令：\
 `media-ctl -p -d /dev/media0`\
@@ -153,13 +153,13 @@ DP 接口的物理接口有两种，一种是矩形形状的标准 DP 接口，�
 
 ---
 ### ⑥USB x 4
-#### 11.1什么是USB
+#### 6.1什么是USB
 USB是Universal Serial Bus的缩写，它是一种通用的数据传输标准，用于将计算机或其他设备与其他设备连接，包括打印机、键盘、鼠标、扫描仪、数字相机、移动设备和其他各种外部设备。\
 随着技术的不断发展，USB的版本也在不断更新。USB 1.0是最早的版本，传输速度很慢，但是随着USB 2.0的推出，传输速度得到了显著提高。USB 3.0和USB 3.1是更快的版本，提供更高的传输速度和更多的功率。同时，USB还可以支持不同的数据传输协议，包括HID（人体接口设备）、音频、视频和存储设备等。\
 我们的开发板上有四个USB3.0接口。
-#### 11.2在Linux系统上使用USB
+#### 6.2在Linux系统上使用USB
 实际上常用USB设备都可以直接在这个系统上使用。比如鼠标键盘，都可以直接配合桌面来使用。使用U盘这些存储工具的话则需要注意分区和文件系统格式，可以参考**①PCIEx1**中SSD的分区和格式化方法。U盘接入到系统之后，设备操作文件一般是 */dev/sda1* 、  */dev/sda2* 等等。
-#### 11.3使用系统内置的脚本测试USB
+#### 6.3使用系统内置的脚本测试USB
 分别接入一个USB2.0设备（比如鼠标）和一个USB3.0设备（比如3.0的U盘），使用 *~/shells_for_testing_peripheral_devices/* 中的 *usb_scan_test.sh* 脚本，可以检测当前USB四个口是否完好，并检测USB2.0和USB3.0设备的连接情况。
 
 ---
@@ -214,7 +214,7 @@ mount /dev/mmcblk0p1 /media/sd-mmcblk0p1
 ![](../.images_for_documents/55.png)
 
 ---
-### ⑨EEPRM
+### ⑨EEPROM
 #### 9.1什么是EEPROM
 EEPROM是一种非易失性存储器（NVM），它是电可擦可编程只读存储器（EPROM）的改进版本。EEPROM可以通过电子信号进行擦除和编程。\
 EEPROM通常用于存储小量的数据，例如芯片上的配置信息、产品序列号、加密密钥等。在一些电子设备中，EEPROM还可以用来存储用户设置和个人资料等数据。\
