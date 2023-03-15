@@ -11,10 +11,10 @@
 ⑤DP
 ⑥USB x 4\
 ⑦ETH\
-⑧EMMC(图中不可见，仅AXU2CGB)\
-⑨EEPROM(图中不可见)\
-⑩QSPI FLASH(图中不可见)\
-⑪DS1308(图中不可见)\
+⑧EMMC(Not visible in the figure, AXU2CGB only)\
+⑨EEPROM(Not visible in the figure)\
+⑩QSPI FLASH(Not visible in the figure)\
+⑪DS1308(Not visible in the figure)\
 PS : In the Linux system on the development board made earlier, I integrated some shell scripts in path *~/shells_for_testing_peripheral_devices/*, which are used to test these interfaces and peripherals. You can also refer to these shell scripts to use these interfaces and peripherals:\
 ![](../.images_for_documents/36.png)
 
@@ -86,7 +86,6 @@ cat /sys/class/gpio/gpio508/value
 ```
 
 #### 2.3Use the built-in script to test LEDs and KEYs
-运行 *~/shells_for_testing_peripheral_devices/* 中的 *leds_keys_test.sh* 脚本(*ps：按**ctrl+c**组合键退出该脚本。*)。然后可以用PS_KEY控制PS_LED点亮和熄灭，PL_KEY控制PS_LED点亮和熄灭
 Run the  *~/shells_for_testing_peripheral_devices/*  script in  *leds_keys_test.sh*  (*ps: press **ctrl+c** to exit the script.*). Then you can use KEY to control the LED to turn on or off :\
 ![](../.images_for_documents/49.png)
 
@@ -138,7 +137,6 @@ media-ctl -V '"80010000.v_proc_ss":1 [fmt:UYVY8_1X16/1920x1080 field:none]'
 Then use the following command to display 1920x1080 camera image on the display :\
 `gst-launch-1.0 -e v4l2src device=/dev/video0 ! video/x-raw,format=YUY2,width=1920,height=1080 ! kmssink bus-id=fd4a0000.zynqmp-display fullscreen-overlay=1`
 #### 4.3Use the built-in script to test the MIPI
-连接显示器到DP口，连接MIPI摄像头到MIPI口，运行 *~/shells_for_testing_peripheral_devices/* 中的 *mipi1_test.sh* 和*mipi2_test.sh*  脚本分别测试两个mipi接口(*ps：按**ctrl+c**组合键退出该脚本。*)以*mipi2_test.sh*  为例：\
 Connect the display to the DP port, connect the MIPI camera to the MIPI port, run the *mipi1_test.sh* or *mipi2_test.sh* scripts in  *~/shells_for_testing_peripheral_devices/* to test the two mipi interfaces respectively (*ps: press **ctrl+c** to exit the script* ). Take *mipi2_test.sh* as an example :\
 ![](../.images_for_documents/47.png)\
 The camera image is displayed in the display :\
