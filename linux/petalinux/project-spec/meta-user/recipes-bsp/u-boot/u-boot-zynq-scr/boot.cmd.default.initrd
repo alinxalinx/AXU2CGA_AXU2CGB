@@ -12,11 +12,17 @@ do
 		exit;
 	fi
 	if test "${boot_target}" = "mmc0" || test "${boot_target}" = "mmc1" ; then
-		if test -e ${devtype} ${devnum}:${distro_bootpart} /@@FIT_IMAGE@@; then
-			fatload ${devtype} ${devnum}:${distro_bootpart} @@FIT_IMAGE_LOAD_ADDRESS@@ @@FIT_IMAGE@@;
+		if test -e ${devtype} 0:${distro_bootpart} /@@FIT_IMAGE@@; then
+			setenv bootargs "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait"
+			fatload ${devtype} 0:${distro_bootpart} @@FIT_IMAGE_LOAD_ADDRESS@@ /@@FIT_IMAGE@@;
 			bootm @@FIT_IMAGE_LOAD_ADDRESS@@;
 			exit;
-                fi
+		elif test -e ${devtype} 1:${distro_bootpart} /@@FIT_IMAGE@@; then
+			setenv bootargs "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rw rootwait"
+			fatload ${devtype} 1:${distro_bootpart} @@FIT_IMAGE_LOAD_ADDRESS@@ @@FIT_IMAGE@@;
+			bootm @@FIT_IMAGE_LOAD_ADDRESS@@;
+			exit;
+		fi
 		if test -e ${devtype} ${devnum}:${distro_bootpart} /@@KERNEL_IMAGE@@; then
 			fatload ${devtype} ${devnum}:${distro_bootpart} @@KERNEL_LOAD_ADDRESS@@ @@KERNEL_IMAGE@@;;
 		fi
