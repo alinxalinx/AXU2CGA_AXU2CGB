@@ -23,7 +23,7 @@ do
 done
 
 if [ "$read_back" = "" ];then
-    echo "hub_error" >> ${result_path}
+    echo "hub_error"
     exit 0
 fi
 
