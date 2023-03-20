@@ -3,8 +3,7 @@
 ## 开发板介绍
 
 AXU2CGA 的 PS端挂载了 2 片 DDR4（共 1GB，32bit）和 1 片 256Mb 的 QSPI FLASH，AXU2CGB 的 PS 端挂载了 4 片 DDR4（共 2GB，64bit），1 片 8GB eMMC FLASH 存储芯片和 1 片 256Mb
-的 QSPI FLASH,外围接口包含 1 个 MINI DP 接口、4 个 USB3.0 接口、1 路千兆以太网接口、1 个 USB
-串口、1 路 PCIE 接口、1 路 TF 卡接口、2 个 40 针扩展口、2 路 MIPI 接口和按键 LED，两款开发板使用的芯片都为XCZU2CG-1SFVC784E。
+的 QSPI FLASH,外围接口包含 1 个 MINI DP 接口、4 个 USB3.0 接口、1 路千兆以太网接口、1 个 USB串口、1 路 PCIE 接口、1 路 TF 卡接口、2 个 40 针扩展口、2 路 MIPI 接口和按键 LED，两款开发板使用的芯片都为XCZU2CG-1SFVC784E。
 
 ## 关键特性
 1. 2片Micron的ddr芯片(AXU2CGA),4片Micron的ddr芯片(AXU2CGB),256Mx16bit
