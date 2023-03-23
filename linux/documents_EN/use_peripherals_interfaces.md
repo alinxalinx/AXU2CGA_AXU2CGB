@@ -14,7 +14,7 @@
 ⑧EMMC(Not visible in the figure, AXU2CGB only)\
 ⑨EEPROM(Not visible in the figure)\
 ⑩QSPI FLASH(Not visible in the figure)\
-⑪DS1308(Not visible in the figure)\
+⑪RTC(Not visible in the figure)\
 PS : In the Linux system on the development board made earlier, I integrated some shell scripts in path *~/shells_for_testing_peripheral_devices/*, which are used to test these interfaces and peripherals. You can also refer to these shell scripts to use these interfaces and peripherals:\
 ![](../.images_for_documents/36.png)
 
@@ -259,11 +259,11 @@ Run the *qspi_flash_test.sh* script in *~/shells_for_testing_peripheral_devices/
 ![](../.images_for_documents/57.png)
 
 ---
-### ⑪DS1308
-#### 11.1What is DS1308
-DS1308 is a low-power real-time clock chip.
-#### 11.2Using DS1308 on Linux systems
-In our Linux system, the device operation file of DS1308 is */dev/rtc0*. You can use the **hwclock** command to read and write */dev/rtc0*. For example:
+### ⑪RTC
+#### 11.1What is RTC
+The Real Time Clock (RTC) unit provides an accurate time reference for the entire system and application software.
+#### 11.2Using RTC on Linux systems
+In our Linux system, the device operation file of RTC is */dev/rtc0*. You can use the **hwclock** command to read and write */dev/rtc0*. For example:
 ```
 #Set the system time to "2023-03-01 10:30:00"
 date --set="2023-03-01 10:30:00"
@@ -273,7 +273,7 @@ hwclock -f /dev/rtc0 -w
 hwclock -f /dev/rtc0 -r
 ```
 ![](../.images_for_documents/73.png)
-#### 11.3Use the built-in script in Linux to test DS1308
+#### 11.3Use the built-in script in Linux to test RTC
 Run the *ds1308_test.sh* script in *~/shells_for_testing_peripheral_devices/* :\
 ![](../.images_for_documents/58.png)
 

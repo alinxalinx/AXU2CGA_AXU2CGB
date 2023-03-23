@@ -14,7 +14,7 @@
 ⑧EMMC(图中不可见，仅AXU2CGB)\
 ⑨EEPROM(图中不可见)\
 ⑩QSPI FLASH(图中不可见)\
-⑪DS1308(图中不可见)\
+⑪RTC(图中不可见)\
 PS：在前面制作的开发板上的Linux系统中，我集成了一些脚本在 *~/shells_for_testing_peripheral_devices/* 路径中用于测试这些接口和外设，你也可以参考这些脚本来使用这些接口和外设：\
 ![](../.images_for_documents/36.png)
 
@@ -260,11 +260,11 @@ dd if=/dev/mtd0 of=/home/root/.qspiflashread  bs=4096 count=1
 ![](../.images_for_documents/57.png)
 
 ---
-### ⑪DS1308
-#### 11.1什么是DS1308
-DS1308是一种低功耗实时时钟芯片。
-#### 11.2在Linux系统上使用DS1308
-在我们的Linux系统中，DS1308的设备操作文件是 */dev/rtc0*。可以用**hwclock**命令来读写 */dev/rtc0*。例如：
+### ⑪RTC
+#### 11.1什么是RTC
+实时时钟(RTC)单元为整个系统和应用软件提供了一个精确的时间基准。
+#### 11.2在Linux系统上使用RTC
+在我们的Linux系统中，RTC的设备操作文件是 */dev/rtc0*。可以用**hwclock**命令来读写 */dev/rtc0*。例如：
 ```
 #设置系统时间为"2023-03-01 10:30:00"
 date --set="2023-03-01 10:30:00"
@@ -274,7 +274,7 @@ hwclock -f /dev/rtc0 -w
 hwclock -f /dev/rtc0 -r
 ```
 ![](../.images_for_documents/73.png)
-#### 11.3使用系统内置的脚本测试DS1308
+#### 11.3使用系统内置的脚本测试RTC
 运行 *~/shells_for_testing_peripheral_devices/* 中的 *ds1308_test.sh* 脚本：\
 ![](../.images_for_documents/58.png)
 
